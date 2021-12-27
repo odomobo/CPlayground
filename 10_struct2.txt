@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct circle
+{
+    int x;
+    int y;
+    int radius;
+};
+
+void circle_draw(struct circle* cir)
+{
+    printf("Drawing circle 0x%08x {x: %d; y: %d; radius: %d}\n", cir, cir->x, cir->y, cir->radius);
+}
+
+struct circle* circle_new(int x, int y, int radius)
+{
+    struct circle* ret = malloc(sizeof(struct circle));
+    ret->x = x;
+    ret->y = y;
+    ret->radius = radius;
+
+    return ret;
+}
+
+
+struct list
+{
+    int length;
+    int _capacity;
+    struct circle** _data; // array of pointers
+};
+
+struct list* list_new()
+{
+    int initial_capacity = 1;
+
+    struct list* ret = malloc(sizeof(struct list));
+    ret->length = 0;
+    ret->_capacity = initial_capacity;
+    // allocate array of 10 pointers
+    ret->_data = malloc(4 * initial_capacity); // or malloc(sizeof(struct circle*) * initial_capacity)
+
+    return ret;
+}
+
+void list_free(struct list* l)
+{
+    // free all circles
+    for (int i = 0; i < l->length; i++)
+    {
+        free(l->_data[i]);
+    }
+
+    free(l->_data);
+    free(l);
+}
+
+struct circle* list_get(struct list* l, int index)
+{
+    return l->_data[index];
+}
+
+// Note: this should be kept hidden
+void list__double_capacity(struct list* l)
+{
+    int new_capacity = l->_capacity * 2;
+    struct circle** old = l->_data;
+    struct circle** new = malloc(sizeof(struct circle*) * new_capacity);
+
+    for (int i = 0; i < l->length; i++)
+    {
+        new[i] = old[i];
+    }
+
+    l->_data = new;
+    l->_capacity = new_capacity;
+
+    free(old);
+}
+
+void list_add(struct list* l, struct circle* cir)
+{
+    if (l->length == l->_capacity)
+    {
+        list__double_capacity(l);
+    }
+
+    int next_index = l->length;
+    l->_data[next_index] = cir;
+    l->length++;
+}
+
+void list_draw(struct list* l)
+{
+    for (int i = 0; i < l->length; i++)
+    {
+        circle_draw(list_get(l, i));
+    }
+}
+
+
+int main()
+{
+    struct list* l = list_new();
+
+    list_add(l, circle_new(400, 400, 100));
+    list_add(l, circle_new(300, 500, 20));
+    list_add(l, circle_new(500, 500, 20));
+    list_add(l, circle_new(500, 300, 20));
+    list_add(l, circle_new(300, 300, 20));
+
+    list_draw(l);
+
+    list_free(l);
+
+    return 0;
+}

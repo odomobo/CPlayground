@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void print(char* string)
+{
+    for (int i = 0; string[i] != 0; i++)
+    {
+        putchar(string[i]);
+    }
+}
+
+int get_length(char* string)
+{
+    int i = 0;
+    while (string[i] != 0)
+    {
+        i++;
+    }
+
+    return i - 1;
+}
+
+char* concatenate(char* first, char* second)
+{
+    int total_length = get_length(first) + get_length(second);
+    char* ret = (char*)malloc(total_length + 1);
+
+    int ret_index = 0;
+    for (int i = 0; first[i] != 0; i++)
+    {
+        ret[ret_index] = first[i];
+        ret_index++;
+    }
+
+    for (int i = 0; second[i] != 0; i++)
+    {
+        ret[ret_index] = second[i];
+        ret_index++;
+    }
+
+    // 0-terminate
+    ret[ret_index] = 0;
+    return ret;
+}
+
+char hello[] = "Hello ";
+char world[] = "World!";
+
+int main()
+{
+    char* hello_world = concatenate(hello, world);
+    print(hello_world);
+    free(hello_world);
+    //print(hello_world); // ERROR! use after free
+    return 0;
+}

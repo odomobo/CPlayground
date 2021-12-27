@@ -1,0 +1,31 @@
+
+struct circle
+{
+    int x;          // offset 0
+    int y;          // offset 4
+    int radius;     // offset 8
+};
+
+void circle_draw(struct circle* cir)
+{
+    int x = (*cir).x;
+    int y = (*cir).y;
+    int radius = (*cir).radius;
+    // actual drawing routine goes here
+}
+
+int main()
+{
+    struct circle cir;
+    cir.x = 10;
+    cir.y = 15;
+    cir.radius = 25;
+
+    circle_draw(&cir);
+
+    //int* x_ptr = &(cir.x);
+    //int* y_ptr = &(cir.y);
+    //int* radius_ptr = &(cir.radius);
+
+    return 0;
+}

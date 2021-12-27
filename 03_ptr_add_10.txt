@@ -1,0 +1,29 @@
+
+void ptr_add_10(int* pointer)
+{
+    int value = *pointer;
+    value = value + 10;
+    *pointer = value;
+}
+
+int a = 0;
+int b = 1;
+int c = 2;
+
+//void* ptr1 = (void*)&a;
+//char* ptr2 = (char*)&a;
+//double* ptr3 = (double*)&a;
+//int ptr4 = (int)&a;
+
+int main()
+{
+    int* a_ptr = &a;
+    int* b_ptr = &b;
+    int* c_ptr = &c;
+
+    ptr_add_10(a_ptr);
+    ptr_add_10(b_ptr);
+    ptr_add_10(c_ptr);
+
+    return 0;
+}

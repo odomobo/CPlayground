@@ -1,0 +1,18 @@
+
+void array_offset_add_10(int* array, int offset)
+{
+    int value = array[offset];
+    value = value + 10;
+    array[offset] = value;
+}
+
+int main()
+{
+    int arr[3] = { 1, 2, 3 };
+
+    array_offset_add_10(&arr[0], 0);
+    array_offset_add_10(&arr[0], 1);
+    array_offset_add_10(&arr[0], 2);
+
+    return 0;
+}

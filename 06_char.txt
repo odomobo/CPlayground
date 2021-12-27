@@ -1,0 +1,11 @@
+int a1 = 65;
+int a2 = 0x41;
+int a3 = 'A';
+char a4 = 65;
+char a5 = 0x41;
+char a6 = 'A';
+
+int main()
+{
+    return 0;
+}

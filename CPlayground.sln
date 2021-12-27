@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPlayground", "CPlayground.vcxproj", "{34DBB98D-B172-4F10-AC17-F83BC4042EBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		Unoptimized|x64 = Unoptimized|x64
+		Unoptimized|x86 = Unoptimized|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Debug|x64.ActiveCfg = Debug|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Debug|x64.Build.0 = Debug|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Debug|x86.ActiveCfg = Debug|Win32
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Debug|x86.Build.0 = Debug|Win32
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Release|x64.ActiveCfg = Release|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Release|x64.Build.0 = Release|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Release|x86.ActiveCfg = Release|Win32
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Release|x86.Build.0 = Release|Win32
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Unoptimized|x64.ActiveCfg = Unoptimized|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Unoptimized|x64.Build.0 = Unoptimized|x64
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Unoptimized|x86.ActiveCfg = Unoptimized|Win32
+		{34DBB98D-B172-4F10-AC17-F83BC4042EBF}.Unoptimized|x86.Build.0 = Unoptimized|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5763BEC4-B046-485D-8392-734E26962A79}
+	EndGlobalSection
+EndGlobal

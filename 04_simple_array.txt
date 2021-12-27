@@ -1,0 +1,17 @@
+
+int simple_add_10(int value)
+{
+    int ret = value + 10;
+    return ret;
+}
+
+int main()
+{
+    int arr[3] = { 1, 2, 3 };
+
+    arr[0] = simple_add_10(arr[0]);
+    arr[1] = simple_add_10(arr[1]);
+    arr[2] = simple_add_10(arr[2]);
+
+    return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+char hi[3] = { 'H', 'i', 0 };
+// char hi[3] = "Hi";
+
+void print(char* string)
+{
+    for (int i = 0; string[i] != 0; i++)
+    {
+        putchar(string[i]);
+    }
+}
+
+int main()
+{
+    print(hi);
+    print("Hello!");
+    return 0;
+}

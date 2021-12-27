@@ -1,0 +1,48 @@
+# Features of c
+
+## Basic features of c
+- Functions
+- Primitive types (int, bool, char, a few others)
+- Arrays (contiguous memory)
+- Casting
+
+## Special features of c
+- Pointers
+- Address-of (get pointer to thing)
+- Dereferencing (get thing from pointer)
+- Pointer array indexing (dereference from offset of pointer)
+- Structs
+- "Strings" (character arrays/pointers)
+
+## Missing from c
+- Arrays as you know them
+- Objects as you know them
+- No real strings
+
+# Concepts
+
+## Simplified architecture model
+- Memory as array of bytes
+- Registers like processor's workbook
+- Processor as state machine
+
+## Memory
+- Split into sections:
+- Code
+- Globals and constants
+- Stack (function working memory)
+- Heap (memory given by OS)
+- Unusable
+
+## Registers
+- Store the state of the process
+- Saved off so CPU can work on different processes, loaded to resume working
+- General-purpose registers: EAX, EBX, ECX, EDX
+- Instruction pointer: EIP
+- Stack pointer, base pointer: ESP, EBP
+
+## Processor
+- Reads instruction at EIP
+- Performs instruction read
+- Advances EIP to next instruction, or change entirely with jump or call
+
